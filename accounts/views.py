@@ -15,10 +15,12 @@ def login(request):
 
         if user is not None:
             auth.login(request,user)
-            return redirect("/")
+            #return render(request, 'test.html')
+            return render(request, 'multiplechoice.html')
         else:
             messages.info(request, 'invalid credentials')
             return redirect('login')
+
     else:
         return render(request, 'login.html')
 def register(request):
